@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MyFirstGrpc";
+
+package Fibonacci;
+
+// The service definition.
+service Fibo {
+	rpc ComputeFibonacci(RequestedNumber) returns (FibonacciResult){}
+}
+
+//the request message format
+message RequestedNumber {
+	int32 number = 1;
+}
+//the response message format
+message FibonacciResult {
+	int32 result = 1;
+}
